@@ -1,0 +1,8 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+curl_cffi==0.16.2
+pydantic-settings==2.5.2
+cryptography==43.0.1
+
+# dev/test only
+pytest==8.3.3

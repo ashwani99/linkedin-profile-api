@@ -1,0 +1,9 @@
+scripts/
+tests/
+.git/
+.env
+*.enc
+__pycache__/
+*.pyc
+notes.md
+.pytest_cache/

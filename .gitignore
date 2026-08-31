@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+*.enc
+session.enc
+.venv/
+venv/

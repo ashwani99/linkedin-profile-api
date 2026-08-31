@@ -1,0 +1,15 @@
+{
+  "_comment": "SYNTHETIC minimal fixture — tests defensive fallback paths when optional sections are entirely absent (a real sparse/new profile).",
+  "profile": {
+    "firstName": "John",
+    "lastName": "Smith",
+    "headline": null,
+    "summary": null,
+    "locationName": null,
+    "miniProfile": {
+      "publicIdentifier": "john-smith-99",
+      "entityUrn": "urn:li:fs_miniProfile:XYZ999",
+      "picture": null
+    }
+  }
+}
