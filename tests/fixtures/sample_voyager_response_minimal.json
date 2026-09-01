@@ -1,15 +1,14 @@
 {
-  "_comment": "SYNTHETIC minimal fixture — tests defensive fallback paths when optional sections are entirely absent (a real sparse/new profile).",
-  "profile": {
-    "firstName": "John",
-    "lastName": "Smith",
-    "headline": null,
-    "summary": null,
-    "locationName": null,
-    "miniProfile": {
-      "publicIdentifier": "john-smith-99",
-      "entityUrn": "urn:li:fs_miniProfile:XYZ999",
-      "picture": null
+  "_comment": "SYNTHETIC minimal fixture, REWRITTEN 2026-08-30 for the flat 'included' array shape — tests defensive fallback paths when only a bare profile entity is present.",
+  "included": [
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Profile",
+      "entityUrn": "urn:li:fsd_profile:XYZ999",
+      "firstName": "John",
+      "lastName": "Smith",
+      "headline": null,
+      "summary": null,
+      "locationName": null
     }
-  }
+  ]
 }

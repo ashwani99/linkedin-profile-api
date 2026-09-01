@@ -39,8 +39,8 @@ class TestFullProfile:
 
     def test_experience_duration_formatting(self, full_response):
         result = parse_profile(full_response, profile_url="https://linkedin.com/in/jane-doe-12345")
-        assert result.experience[1].duration == "01/2018 - 05/2021"
-        assert result.experience[0].duration == "06/2021 - Present"
+        assert result.experience[1].duration == "2018 - 2021"
+        assert result.experience[0].duration == "2021 - Present"
 
     def test_education_skills_certifications_languages(self, full_response):
         result = parse_profile(full_response, profile_url="https://linkedin.com/in/jane-doe-12345")

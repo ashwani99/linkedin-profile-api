@@ -1,70 +1,59 @@
 {
-  "_comment": "SYNTHETIC fixture, hand-built from the verified top-level structure of Voyager's profileView (see notes.md). NOT captured from a real response. Nested field names here are best-effort inference and MUST be corrected against real data once available.",
-  "profile": {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "headline": "Senior Software Engineer at Acme Corp",
-    "summary": "Passionate backend engineer with 10 years of experience building distributed systems.",
-    "locationName": "San Francisco Bay Area",
-    "miniProfile": {
-      "publicIdentifier": "jane-doe-12345",
-      "entityUrn": "urn:li:fs_miniProfile:ABC123",
-      "picture": {
-        "com.linkedin.common.VectorImage": {
-          "rootUrl": "https://media.licdn.com/dms/image/abc/profile-displayphoto/",
-          "artifacts": [
-            {"width": 200, "height": 200, "fileIdentifyingUrlPathSegment": "200_200/photo.jpg"}
-          ]
+  "_comment": "SYNTHETIC fixture, updated 2026-09-01 to match confirmed real-response shapes: geoLocation->Geo lookup for location, displayImageReference.vectorImage for image, year-only duration formatting from real data.",
+  "included": [
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Profile",
+      "entityUrn": "urn:li:fsd_profile:ABC123",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "headline": "Senior Software Engineer at Acme Corp",
+      "summary": "Passionate backend engineer with 10 years of experience building distributed systems.",
+      "locationName": null,
+      "geoLocation": {"geoUrn": "urn:li:fsd_geo:90000001"},
+      "profilePicture": {
+        "displayImageReference": {
+          "vectorImage": {
+            "rootUrl": "https://media.licdn.com/dms/image/abc/profile-displayphoto-",
+            "artifacts": [
+              {"width": 100, "height": 100, "fileIdentifyingUrlPathSegment": "100_100/photo.jpg?e=1234&v=beta&t=abc"},
+              {"width": 400, "height": 400, "fileIdentifyingUrlPathSegment": "400_400/photo.jpg?e=1234&v=beta&t=def"}
+            ]
+          }
         }
       }
-    }
-  },
-  "positionView": {
-    "elements": [
-      {
-        "title": "Senior Software Engineer",
-        "companyName": "Acme Corp",
-        "locationName": "San Francisco, CA",
-        "timePeriod": {"startDate": {"month": 6, "year": 2021}},
-        "description": "Leading backend infrastructure team."
-      },
-      {
-        "title": "Software Engineer",
-        "company": {"miniCompany": {"name": "Beta Inc"}},
-        "timePeriod": {"startDate": {"month": 1, "year": 2018}, "endDate": {"month": 5, "year": 2021}},
-        "description": "Built distributed systems."
-      }
-    ]
-  },
-  "educationView": {
-    "elements": [
-      {
-        "school": {"schoolName": "State University"},
-        "degreeName": "B.S. Computer Science",
-        "timePeriod": {"startDate": {"year": 2014}, "endDate": {"year": 2018}}
-      }
-    ]
-  },
-  "skillView": {
-    "elements": [
-      {"name": "Python"},
-      {"name": "Distributed Systems"},
-      {"name": "Kubernetes"}
-    ]
-  },
-  "certificationView": {
-    "elements": [
-      {
-        "name": "AWS Certified Solutions Architect",
-        "authority": "Amazon Web Services",
-        "timePeriod": {"startDate": {"month": 3, "year": 2022}}
-      }
-    ]
-  },
-  "languageView": {
-    "elements": [
-      {"name": "English"},
-      {"name": "Spanish"}
-    ]
-  }
+    },
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Position",
+      "title": "Senior Software Engineer",
+      "companyName": "Acme Corp",
+      "locationName": "San Francisco, CA",
+      "dateRange": {"start": {"year": 2021}},
+      "description": "Leading backend infrastructure team."
+    },
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Position",
+      "title": "Software Engineer",
+      "companyName": "Beta Inc",
+      "dateRange": {"start": {"year": 2018}, "end": {"year": 2021}},
+      "description": "Built distributed systems."
+    },
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Education",
+      "schoolName": "State University",
+      "degreeName": "B.S. Computer Science",
+      "dateRange": {"start": {"year": 2014}, "end": {"year": 2018}}
+    },
+    {"$type": "com.linkedin.voyager.dash.identity.profile.Skill", "name": "Python"},
+    {"$type": "com.linkedin.voyager.dash.identity.profile.Skill", "name": "Distributed Systems"},
+    {"$type": "com.linkedin.voyager.dash.identity.profile.Skill", "name": "Kubernetes"},
+    {
+      "$type": "com.linkedin.voyager.dash.identity.profile.Certification",
+      "name": "AWS Certified Solutions Architect",
+      "authority": "Amazon Web Services",
+      "dateRange": {"start": {"year": 2022}}
+    },
+    {"$type": "com.linkedin.voyager.dash.identity.profile.Language", "name": "English"},
+    {"$type": "com.linkedin.voyager.dash.identity.profile.Language", "name": "Spanish"},
+    {"$type": "com.linkedin.voyager.dash.common.Geo", "entityUrn": "urn:li:fsd_geo:90000001", "defaultLocalizedName": "San Francisco Bay Area"}
+  ]
 }
